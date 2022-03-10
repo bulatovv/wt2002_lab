@@ -1,0 +1,100 @@
+body {
+  font-family: sans-serif;
+  margin: auto;
+  background: #f6f6f6;
+  width: 1200px; }
+
+header {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  justify-items: start;
+  padding-left: 5em;
+  padding-right: 5em;
+  height: 4.8em;
+  border: ridge 2px;
+  background-color: #ebeaeb;
+  border-color: black; }
+
+.site-logo {
+  align-self: start;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  user-select: none;
+  font-family: serif;
+  font-size: 2.8em;
+  color: white;
+  background-color: #8884ff; }
+
+.site-name {
+  align-self: center;
+  font-size: 0.9em;
+  color: #8884ff; }
+
+.btn-upload {
+  padding: 0.75em;
+  align-self: center;
+  font-size: 0.9em;
+  background-color: #8884ff;
+  color: white;
+  border-radius: 0.75em; }
+
+main {
+  margin: auto;
+  width: 1000px; }
+  main h1 {
+    font-weight: normal; }
+
+.object-cards {
+  margin-bottom: 6em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 5em;
+  grid-row-gap: 2.5em; }
+
+.object-card {
+  position: relative; }
+  .object-card:nth-child(6n + 1) {
+    background-color: #918df6; }
+  .object-card:nth-child(6n + 2) {
+    background-color: #9996ed; }
+  .object-card:nth-child(6n + 3) {
+    background-color: #a2a0e3; }
+  .object-card:nth-child(6n + 4) {
+    background-color: #aba9da; }
+  .object-card:nth-child(6n + 5) {
+    background-color: #b3b2d1; }
+  .object-card:nth-child(6n + 6) {
+    background-color: #bcbbc8; }
+  .object-card .image {
+    max-width: 100%;
+    max-height: 100%; }
+  .object-card .type {
+    position: absolute;
+    top: 0.4em;
+    left: 0.4em;
+    font-weight: bold;
+    border: solid 1px;
+    background-color: #ebebff;
+    border-color: #8884ff; }
+  .object-card .name {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    font-size: 1.5em; }
+  .object-card .description {
+    font-size: 0.84em; }
+
+footer {
+  display: flex;
+  padding-top: 2em;
+  border-top: ridge 2px;
+  border-color: black; }
+  footer .contacts {
+    margin-left: auto;
+    margin-right: 3em; }
+    footer .contacts img {
+      width: 2em;
+      height: 2em; }
+  footer .author {
+    margin-left: 3em; }
