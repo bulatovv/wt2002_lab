@@ -6,10 +6,45 @@ $gray: #ebeaeb;
 $light-bluish: #ebebff;
 $bg: #f6f6f6;
 
+body {
+    margin: auto;
+}
+
+@include media-breakpoint-up(xs) {
+    body { width: 100%; font-size: 6px; }
+}
+@include media-breakpoint-up(sm) {
+    body { width: 100%; font-size: 12px; }
+}
+@include media-breakpoint-up(md) {
+    body { width: 75%; font-size: 14px; }
+    main { width: 75%; }
+}
+@include media-breakpoint-up(lg) {
+    body { width: 75%; font-size: 16px; }
+    main { width: 75%; }
+}
+@include media-breakpoint-up(xl) {
+    body { width: 75%; font-size: 18px; }
+    main { width: 75%; }
+}
+@include media-breakpoint-up(xxl){
+    body { width: 75%; font-size: 18px; }
+    main { width: 75%; }
+}
+
 header {
     border: ridge 2px;
     background-color: $gray;
     border-color: black;
+}
+
+main {
+    margin: auto;
+    h1 {
+        font-size: 2.5em;
+        font-weight: normal;
+    }
 }
 
 .site-logo {
