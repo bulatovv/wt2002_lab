@@ -89,12 +89,15 @@ main {
     .col {@include color-change(6);}
 
     .card {
-        &-img-overlay .type {
-            display: inline;
-            font-weight: bold;
-            border: solid 1px;
-            background-color: $light-bluish;
-            border-color: $bluish;
+        &-img-overlay { 
+            .type {
+                display: inline;
+                font-weight: bold;
+                border: solid 1px;
+                background-color: $light-bluish;
+                border-color: $bluish;
+            }
+            pointer-events: none;
         }
 
         &-title {
