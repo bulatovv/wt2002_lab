@@ -1,2 +1,35 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
+
+$bluish: #8884ff;
+$gray: #ebeaeb;
+$light-bluish: #ebebff;
+$bg: #f6f6f6;
+
+.header {
+    border: ridge 2px;
+    background-color: $gray;
+    border-color: black;
+}
+
+.site-logo {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    font-size: 2.8em;
+    user-select: none;
+    font-family: serif;
+    color: white;
+    background-color: $bluish;
+}
+
+.site-name {
+    font-size: 0.9em;
+    color: $bluish;
+}
+
+.btn-upload {
+    font-size: 1.5em;
+    background-color: $bluish;
+    color: white;
+    border-radius: 0.75em;
+}
