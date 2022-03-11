@@ -11,28 +11,28 @@ body {
 }
 
 @include media-breakpoint-up(xs) {
-    body { width: 100%; font-size: 8px; }
+    body { width: 100%; font-size: 4px; }
 }
 @include media-breakpoint-up(sm) {
-    body { width: 100%; font-size: 10px; }
+    body { width: 100%; font-size: 6px; }
 }
 @include media-breakpoint-up(md) {
-    body { width: 100%; font-size: 12px; }
+    body { width: 100%; font-size: 8px; }
 }
 @include media-breakpoint-up(lg) {
-    body { width: 100%; font-size: 14px; }
+    body { width: 100%; font-size: 10px; }
     main { width: 85%; }
 }
 @include media-breakpoint-up(xl) {
-    body { width: 85%; font-size: 16px; }
+    body { width: 85%; font-size: 12px; }
     main { width: 85%; }
 }
 @include media-breakpoint-up(xxl){
-    body { width: 85%; font-size: 18px; }
+    body { width: 85%; font-size: 14px; }
     main { width: 85%; }
 }
 @include media-breakpoint-up(3xl){
-    body { width: 85%; font-size: 20px; }
+    body { width: 85%; font-size: 16px; }
     main { width: 85%; }
 }
 
@@ -40,6 +40,8 @@ header {
     border: ridge 2px;
     background-color: $gray;
     border-color: black;
+    
+    height: 4.8em;
 }
 
 main {
