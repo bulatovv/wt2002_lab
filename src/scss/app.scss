@@ -33,3 +33,37 @@ header {
     color: white;
     border-radius: 0.75em;
 }
+
+@mixin color-change($amount) {
+    $base-color: transparentize($bluish, 0.0);
+    @for $i from 1 through $amount {
+        &:nth-child(#{$amount}n + #{$i}) {
+            .card-body {
+                background-color: desaturate($base-color, $i * 15%);
+            }
+        }
+    }
+}
+
+.cards-container {
+    .col {@include color-change(6);}
+
+    .card {
+        &-img-overlay .type {
+            display: inline;
+            font-weight: bold;
+            border: solid 1px;
+            background-color: $light-bluish;
+            border-color: $bluish;
+        }
+
+        &-title {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+       
+        &-text {
+            font-size: 0.84em; 
+        }
+    }
+}
