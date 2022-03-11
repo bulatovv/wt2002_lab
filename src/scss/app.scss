@@ -11,10 +11,10 @@ body {
 }
 
 @include media-breakpoint-up(xs) {
-    body { width: 100%; font-size: 4px; }
+    body { width: 100%; font-size: 8px; }
 }
 @include media-breakpoint-up(sm) {
-    body { width: 100%; font-size: 6px; }
+    body { width: 100%; font-size: 8px; }
 }
 @include media-breakpoint-up(md) {
     body { width: 100%; font-size: 8px; }
