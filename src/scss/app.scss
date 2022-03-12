@@ -68,10 +68,9 @@ main {
 }
 
 .btn-upload {
-    font-size: 1.5em;
+    font-size: 1.4em;
     background-color: $bluish;
     color: white;
-    border-radius: 0.75em;
 }
 
 @mixin color-change($amount) {
