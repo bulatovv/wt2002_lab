@@ -10,6 +10,12 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
 })
 
+var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+var toastList = toastElList.map(function (toastEl) {
+  return new bootstrap.Toast(toastEl)
+})
+
+
 $(document).keydown(function(e){
     var current = $(".modal:visible")
     switch (e.which){
@@ -26,4 +32,10 @@ $(document).keydown(function(e){
             next.modal('show');
         break;
     }
+});
+
+
+$(".btn-upload").click(function(){
+    console.log("test");
+    $("#not-impl-toast").toast("show");
 });
