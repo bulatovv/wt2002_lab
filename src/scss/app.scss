@@ -1,6 +1,11 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+
+
+
 $bluish: #8884ff;
 $gray: #ebeaeb;
 $light-bluish: #ebebff;
@@ -86,6 +91,11 @@ main {
 
 .cards-container {
     .col {@include color-change(6);}
+
+    img {
+        object-fit: cover;
+        height: 15vw;
+    }
 
     .card {
         &-img-overlay { 
