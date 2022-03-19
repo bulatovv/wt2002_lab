@@ -4,8 +4,6 @@
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 
-
-
 $bluish: #8884ff;
 $gray: #ebeaeb;
 $light-bluish: #ebebff;
@@ -16,13 +14,13 @@ body {
 }
 
 @include media-breakpoint-up(xs) {
-    body { width: 100%; font-size: 8px; }
+    body { width: 100%; font-size: 10px; }
 }
 @include media-breakpoint-up(sm) {
-    body { width: 100%; font-size: 8px; }
+    body { width: 100%; font-size: 10px; }
 }
 @include media-breakpoint-up(md) {
-    body { width: 100%; font-size: 8px; }
+    body { width: 100%; font-size: 10px; }
 }
 @include media-breakpoint-up(lg) {
     body { width: 100%; font-size: 10px; }
@@ -123,4 +121,3 @@ footer {
     border-top: ridge 2px;
     border-color: black;
 }
-
