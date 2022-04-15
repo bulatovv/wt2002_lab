@@ -20751,6 +20751,10 @@ footer {
   border-color: black;
 }
 
+#imagePreview {
+  height: 15vw;
+}
+
 .img-placeholder {
   content: url("/img/image-add-fill.svg");
   filter: invert(35%) brightness(150%);

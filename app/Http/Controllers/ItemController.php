@@ -13,14 +13,11 @@ class ItemController extends Controller
         return view('index', ['items' => Item::all()]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view('create_item');
+        return view('item_form', [
+            'action' => route('items.store'),
+        ]);
     }
 
     public function store(Request $request)
@@ -35,7 +32,6 @@ class ItemController extends Controller
         $request->image->store('img');
         $data = $request->all();
         $data['image'] = $request->image->hashName(); 
-                                    ;
 
         $item = new Item($data);
         $item->save();
@@ -54,35 +50,18 @@ class ItemController extends Controller
         /* TODO: показать модальное окно */
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function edit(Item $item)
     {
+        return view('item_form', ['item' => $item]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request, Item $item)
     {
-        $item = Item::findOrFail($id);
         $item->update($request);
+
+        return redirect()->route('items.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
