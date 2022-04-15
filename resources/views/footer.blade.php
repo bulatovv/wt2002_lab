@@ -2,13 +2,13 @@
     <div class="name me-auto">Фазлыев А.А</div>
     <div class="contacts">
         <a href="https://github.com/bulatovv"> 
-            <img class="img-fluid" src="img/github-fill.svg">
+            <img class="img-fluid" src="{{ asset('img/github-fill.svg') }}">
         </a>
         <a href="https://t.me/awk_sed"> 
-            <img class="img-fluid" src="img/telegram-fill.svg">
+            <img class="img-fluid" src="{{ asset('img/telegram-fill.svg') }}">
         </a>
         <a href="mailto: albert.fz@yandex.ru"> 
-            <img class="img-fluid" src="img/mail-fill.svg">
+            <img class="img-fluid" src="{{ asset('img/mail-fill.svg') }}">
         </a>
     </div>
 </footer>

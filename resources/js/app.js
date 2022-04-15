@@ -12,12 +12,6 @@ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
     return new bootstrap.Popover(popoverTriggerEl)
 })
 
-var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-var toastList = toastElList.map(function (toastEl) {
-  return new bootstrap.Toast(toastEl)
-})
-
-
 $(document).keydown(function(e){
     var current = $(".modal:visible")
     switch (e.which){
@@ -36,8 +30,9 @@ $(document).keydown(function(e){
     }
 });
 
-
-$(".btn-upload").click(function(){
-    console.log("test");
-    $("#not-impl-toast").toast("show");
-});
+image.onchange = evt => {
+  const [file] = image.files
+  if (file) {
+    imagePreview.src = URL.createObjectURL(file)
+  }
+}
