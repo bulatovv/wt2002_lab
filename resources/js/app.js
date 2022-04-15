@@ -1,20 +1,20 @@
 require('./bootstrap');
 
 import $ from "jquery";
-window.jQuery = $;
-window.$ = $;
 
 var bootstrap = require('bootstrap');
-window.bootstrap = bootstrap;
-
 import '../scss/app.scss';
 
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(popoverTriggerEl => 
-    new bootstrap.Popover(popoverTriggerEl)
-)
+window.jQuery = $;
+window.$ = $;
+window.bootstrap = bootstrap;
 
-$(document).keydown(e => {
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+
+$(document).keydown(function(e){
     var current = $(".modal:visible")
     switch (e.which){
     case 37: // left arrow key
@@ -31,3 +31,4 @@ $(document).keydown(e => {
         break;
     }
 });
+

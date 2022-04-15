@@ -1,26 +1,27 @@
 @extends('base')
 
-@if(empty($item))
+@empty($item)
     @php
         $action = route('items.store');
-        $method = 'post';
     @endphp
     @section('title', 'Добавить объект')
 @else
     @php
         $action = route('items.update', [$item]);
-        $method = 'put';
     @endphp
     @section('title', 'Редактировать объект')
 @endif
 
 @section('main')
-    <form action="{{ $action }}" enctype="multipart/form-data" method="{{ $method }}">
+    <form action="{{ $action }}" enctype="multipart/form-data" method="post">
         @csrf
+        @isset($item)
+            @method('PUT')
+        @endif
         <div class="container d-flex justify-content-evenly">
             <div class="left">
                 <label for="image">
-                    @if(empty($item->image)) 
+                    @empty($item->image)
                         <img id="imagePreview" class="img-fluid rounded img-placeholder">
                     @else
                         <img id="imagePreview" class="img-fluid rounded" 

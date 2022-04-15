@@ -53,13 +53,20 @@ class ItemController extends Controller
 
     public function update(Request $request, Item $item)
     {
-        $item->update($request);
+        $request->validate([
+            'image' => 'image:jpg,png,webp,gif|max:1024'
+        ]);
 
+        $item->update($request->all());
         return redirect()->route('items.index');
     }
 
-    public function destroy($id)
+    public function destroy(Item $item)
     {
-        //
+        
+        error_log($item);
+        $item->delete();
+
+        return redirect()->route('items.index');
     }
 }
