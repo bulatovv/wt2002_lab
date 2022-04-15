@@ -4,7 +4,7 @@
 
 @section('nav-items')
     <li class="nav-item align-self-center">
-        <button type="button" class="btn btn-upload">Загрузить</button>
+        <a href="{{ route('items.create') }}" type="button" class="btn btn-upload">Загрузить</a>
     </li>
 @endsection
 

@@ -20,7 +20,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-
+        return view('create_item');
     }
 
     public function store(Request $request)
@@ -29,14 +29,18 @@ class ItemController extends Controller
             'name' => 'required',
             'type' => 'required',
             'description' => 'required',
-            'image' => 'required|image:jpg,png,webp|max:256'
+            'image' => 'required|image:jpg,png,webp,gif|max:1024'
         ]);
-        
-        $item = new Item(
-            $request->merge(['image' => $request->image->store('img')]) 
-        );
 
+        $request->image->store('img');
+        $data = $request->all();
+        $data['image'] = $request->image->hashName(); 
+                                    ;
+
+        $item = new Item($data);
         $item->save();
+
+        return redirect()->route('items.index');
     }
 
     /**
@@ -58,7 +62,6 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        //
     }
 
     /**

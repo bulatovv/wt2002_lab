@@ -13,6 +13,7 @@ class Item extends Model
         'name',
         'type',
         'description',
+        'image'
     ];
 
     public function setNameAttribute($value)

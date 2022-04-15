@@ -121,3 +121,9 @@ footer {
     border-top: ridge 2px;
     border-color: black;
 }
+
+.img-placeholder {
+	content: url("/img/image-add-fill.svg");
+    filter: invert(35%) brightness(150%);
+    background-color: $gray;
+}

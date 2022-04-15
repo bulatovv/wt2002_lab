@@ -33,6 +33,7 @@ $(document).keydown(function(e){
 image.onchange = evt => {
   const [file] = image.files
   if (file) {
-    imagePreview.src = URL.createObjectURL(file)
+    imagePreview.src = URL.createObjectURL(file);
+    imagePreview.classList.remove("img-placeholder")
   }
 }
