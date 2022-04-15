@@ -28,6 +28,15 @@
                     @endif
                     <input id="image" type="file" name="image" style="display:none">
                 </label>
+                <script>
+                    image.onchange = e => {
+                        const [file] = image.files
+                        if (file) {
+                            imagePreview.src = URL.createObjectURL(file);
+                            imagePreview.classList.remove("img-placeholder")
+                         }
+                    } 
+                </script>
             </div>
 
             <div class="right w-50">

@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8"/>
     <link rel='stylesheet' type='text/css' href='{{ asset('css/app.css') }}'>
-    <script defer src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+
     <title>@yield('title')</title>
 </head>
 
@@ -15,6 +16,15 @@
         @yield('main')
     </main>
     @include('footer')
+
+    @if(session('show_modal'))
+        @include('item_modal', ['item' => session('show_modal')])
+        <script>
+            var element = $("#modal{{ session('show_modal')->id }}");
+            var modal = new bootstrap.Modal(element);
+            modal.show();
+        </script>
+    @endif
 </body>
 
 

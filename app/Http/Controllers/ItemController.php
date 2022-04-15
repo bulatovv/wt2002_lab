@@ -39,15 +39,11 @@ class ItemController extends Controller
         return redirect()->route('items.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function show(Item $item)
     {
-        /* TODO: показать модальное окно */
+        return redirect()
+            ->back()
+            ->with(['show_modal' => $item]);
     }
 
     public function edit(Item $item)
