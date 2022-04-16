@@ -10,9 +10,9 @@
 </head>
 
 
-<body>    
+<body class="m-auto">    
     @include('header')
-    <main class="mx-2 mx-lg-auto">
+    <main class="mx-lg-auto mb-5">
         @yield('main')
     </main>
     @include('footer')

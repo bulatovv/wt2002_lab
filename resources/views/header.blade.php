@@ -1,4 +1,4 @@
-<header class="px-5 mb-3">
+<header class="mb-5 px-5">
     <ul class="nav flex-row">
         <li class="nav-item me-5 align-self-start">
             <div class="site-logo">d</div>
