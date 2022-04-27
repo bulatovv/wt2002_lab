@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import "variables";
+@import "~bootstrap/scss/bootstrap";
+@import "custom";
+
+$gray: #ebeaeb;
+
+@include media-breakpoint-up(xs) {
+    body { width: 100%; font-size: 10px; }
+}
+@include media-breakpoint-up(sm) {
+    body { width: 100%; font-size: 10px; }
+}
+@include media-breakpoint-up(md) {
+    body { width: 100%; font-size: 10px; }
+}
+@include media-breakpoint-up(lg) {
+    body { width: 100%; font-size: 10px; }
+    main { width: 85%; }
+}
+@include media-breakpoint-up(xl) {
+    body { width: 85%; font-size: 12px; }
+    main { width: 85%; }
+}
+@include media-breakpoint-up(xxl){
+    body { width: 85%; font-size: 14px; }
+    main { width: 85%; }
+}
+@include media-breakpoint-up(3xl){
+    body { width: 85%; font-size: 16px; }
+    main { width: 85%; }
+}
+
+header {
+    border: ridge 2px;
+    background-color: $gray;
+    border-color: black;
+    
+    height: 4.8em;
+}
+
+main {
+    h1 {
+        font-size: 2.5em;
+        font-weight: normal;
+    }
+}
+
+.site-logo {
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    font-size: 2.8em;
+    user-select: none;
+    font-family: serif;
+    color: white;
+    background-color: $primary;
+}
+
+.site-name {
+    font-size: 1.4em;
+    color: $primary;
+}
+
+.btn-upload {
+    font-size: 1.4em;
+}
+
+@mixin color-change($amount) {
+    $base-color: transparentize($primary, 0.0);
+    @for $i from 1 through $amount {
+        &:nth-child(#{$amount}n + #{$i}) {
+            .card-body {
+                background-color: desaturate($base-color, $i * 15%);
+            }
+        }
+    }
+}
+
+.cards-container {
+    .col {@include color-change(6);}
+
+    img {
+        object-fit: cover;
+        height: 15vw;
+    }
+
+    .card {
+        &-img-overlay { 
+            .type {
+                display: inline;
+                font-weight: bold;
+                border: solid 1px;
+                background-color: lighten($primary, 50%);
+                border-color: $primary;
+            }
+            pointer-events: none;
+        }
+
+        &-title {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+       
+        &-text {
+            font-size: 100%; 
+        }
+    }
+}
+
+footer {
+    border-top: ridge 2px;
+    border-color: black;
+}
+
+#imagePreview {
+    height: 15vw;
+}
+
+.img-placeholder {
+	content: url("/img/image-add-fill.svg");
+    filter: invert(35%) brightness(150%);
+    background-color: $gray;
+}

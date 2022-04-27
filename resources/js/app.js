@@ -1,18 +1,16 @@
 require('./bootstrap');
 
 import $ from "jquery";
-
+import Alpine from 'alpinejs';
 var bootstrap = require('bootstrap');
 import '../scss/app.scss';
 
 window.jQuery = $;
 window.$ = $;
 window.bootstrap = bootstrap;
-
-import Alpine from 'alpinejs';
 window.Alpine = Alpine;
-Alpine.start();
 
+Alpine.start();
 
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
 var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
