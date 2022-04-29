@@ -1,11 +1,11 @@
 <div class="cards-container">
     <div class="row row-cols-2 row-cols-sm-3 g-5">
         @foreach ($items as $item)
-            @include('item_card')
+            <x-item-card :item="$item" />
         @endforeach
     </div>
 </div>
 
 @foreach ($items as $item)
-    @include('item_modal')
+    <x-item-modal :item="$item" />
 @endforeach

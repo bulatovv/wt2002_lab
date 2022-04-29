@@ -1,18 +1,20 @@
-@extends('base')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 > Предмет </h2>
+    </x-slot>
 
-@empty($item)
-    @php
-        $action = route('items.store');
-    @endphp
-    @section('title', 'Добавить объект')
-@else
-    @php
-        $action = route('items.update', [$item]);
-    @endphp
-    @section('title', 'Редактировать объект')
-@endif
+    @empty($item)
+        @php
+            $action = route('items.store');
+        @endphp
+        <x-slot name="title">Добавить объект</x-slot>
+    @else
+        @php
+            $action = route('items.update', [$item]);
+        @endphp
+        <x-slot name="title">Редактировать объект</x-slot>
+    @endif
 
-@section('main')
     <form action="{{ $action }}" enctype="multipart/form-data" method="post">
         @csrf
         @isset($item)
@@ -59,4 +61,4 @@
             </div>
         </div>
     </form>
-@endsection
+</x-app-layout>

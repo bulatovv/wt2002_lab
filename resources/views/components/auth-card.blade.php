@@ -5,9 +5,14 @@
                 {{ $logo }}
             </div>
 
-            <div class="card shadow-sm px-3">
+            <div class="card shadow-sm px-3 mb-3">
                 {{ $slot }}
             </div>
+            
+            @isset($sub)
+                {{ $sub }}
+            @endisset
+
         </div>
     </div>
 </div>

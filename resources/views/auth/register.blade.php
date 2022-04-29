@@ -15,21 +15,21 @@
 
                 <!-- Name -->
                 <div class="mb-3">
-                    <x-label for="name" :value="__('Name')" />
+                    <x-label for="name" value="Имя" />
 
                     <x-input id="name" type="text" name="name" :value="old('name')" required autofocus />
                 </div>
 
                 <!-- Email Address -->
                 <div class="mb-3">
-                    <x-label for="email" :value="__('Email')" />
+                    <x-label for="email" value="Электронная почта" />
 
                     <x-input id="email" type="email" name="email" :value="old('email')" required />
                 </div>
 
                 <!-- Password -->
                 <div class="mb-3">
-                    <x-label for="password" :value="__('Password')" />
+                    <x-label for="password" value="Пароль" />
 
                     <x-input id="password" type="password"
                                     name="password"
@@ -38,7 +38,7 @@
 
                 <!-- Confirm Password -->
                 <div class="mb-3">
-                    <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                    <x-label for="password_confirmation" value="Подтвердите пароль" />
 
                     <x-input id="password_confirmation" type="password"
                                     name="password_confirmation" required />
@@ -47,11 +47,11 @@
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
                         <a class="text-muted me-3 text-decoration-none" href="{{ route('login') }}">
-                            {{ __('Already registered?') }}
+                            Уже есть аккаунт?
                         </a>
 
                         <x-button>
-                            {{ __('Register') }}
+                            Зарегиcтрироваться
                         </x-button>
                     </div>
                 </div>

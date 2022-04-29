@@ -1,13 +1,12 @@
-@extends('base')
+<x-app-layout>
 
-@section('title', 'Заголовок')
+    <x-slot name="title">Заголовок</x-slot>
 
-@section('nav-items')
-    <li class="nav-item align-self-center">
-        <a href="{{ route('items.create') }}" type="button" class="btn btn-upload btn-primary">Загрузить</a>
-    </li>
-@endsection
 
-@section('main')
-    @include('items')
-@endsection
+    <x-slot name="header">
+        <h2 > Главная </h2>
+    </x-slot>
+
+    <x-items :items="$items"/>
+
+</x-app-layout>

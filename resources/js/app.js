@@ -1,14 +1,5 @@
 require('./bootstrap');
 
-import $ from "jquery";
-import Alpine from 'alpinejs';
-var bootstrap = require('bootstrap');
-import '../scss/app.scss';
-
-window.jQuery = $;
-window.$ = $;
-window.bootstrap = bootstrap;
-window.Alpine = Alpine;
 
 Alpine.start();
 
