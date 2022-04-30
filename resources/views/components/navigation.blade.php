@@ -16,6 +16,12 @@
                 </x-nav-link>
             </ul>
             
+            <ul class="navbar-nav">
+                <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+                    Пользователи
+                </x-nav-link>
+            </ul>
+            
             @auth
                 <ul class="navbar-nav">
                     <x-nav-link href="{{ route('items.create') }}" :active="request()->routeIs('items.create')">
@@ -35,7 +41,7 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link :href="route('user.show', [Auth::id()])">
+                            <x-dropdown-link :href="route('users.show', [Auth::id()])">
                                 Мои предметы
                             </x-dropdown-link>
                             <form method="POST" action="{{ route('logout') }}">
