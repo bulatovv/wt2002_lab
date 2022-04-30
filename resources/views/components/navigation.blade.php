@@ -22,13 +22,13 @@
                 </x-nav-link>
             </ul>
             
-            @auth
+            @can('create', App\Models\Item::class)
                 <ul class="navbar-nav">
                     <x-nav-link href="{{ route('items.create') }}" :active="request()->routeIs('items.create')">
                         Загрузить
                     </x-nav-link>
                 </ul>
-            @endauth
+            @endcan
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">

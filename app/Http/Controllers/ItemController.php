@@ -7,7 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 
 class ItemController extends Controller
-{
+{    
+    
+    public function __construct()
+    {
+        $this->authorizeResource(Item::class, 'item');
+    }
+
     public function index()
     {
         return view('index', ['items' => Item::all()]);

@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 
+
+
 class Item extends Model
 {
     use HasFactory;
@@ -24,6 +26,11 @@ class Item extends Model
         static::creating(function ($item) {
             $item->user_id = Auth::id();
         });
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function setNameAttribute($value)

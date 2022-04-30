@@ -17,12 +17,17 @@
                 </button>
                 --}}
                 <div class="container d-flex">
-                    <a href="{{ route('items.edit', [$item]) }}" class="btn btn-success mx-1">Редактировать</a>
-                    <form action={{ route('items.destroy', [$item]) }} method="post">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" class="btn btn-danger" value="Удалить">
-                    </form>
+                    @can('update', $item)
+                        <a href="{{ route('items.edit', [$item]) }}" class="btn btn-success mx-1">Редактировать</a>
+                    @endcan
+
+                    @can('delete', $item)
+                        <form action={{ route('items.destroy', [$item]) }} method="post">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" class="btn btn-danger" value="Удалить">
+                        </form>
+                    @endcan
                 </div>
             </div>
         </div>
