@@ -6,7 +6,7 @@
     <x-slot name="header">
         <h2 > Пользователи </h2>
         @foreach ($users as $user)
-            <span class="badge bg-primary">{{ $user->name }}</span>
+            <a href="{{ route('users.show', [$user->name]) }}" class="badge bg-primary">{{ $user->name }}</a>
         @endforeach
     </x-slot>
 

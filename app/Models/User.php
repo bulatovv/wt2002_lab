@@ -31,6 +31,11 @@ class User extends Authenticatable
         'is_admin' => False
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
+
     public function isAdmin() 
     {
         return $this->attributes['is_admin'];  

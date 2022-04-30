@@ -49,7 +49,7 @@
                         </x-slot>
 
                         <x-slot name="content">
-                            <x-dropdown-link :href="route('users.show', [Auth::id()])">
+                            <x-dropdown-link :href="route('users.show', [Auth::user()->name])">
                                 Мои предметы
                             </x-dropdown-link>
                             <form method="POST" action="{{ route('logout') }}">
