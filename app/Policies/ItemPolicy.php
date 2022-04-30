@@ -53,7 +53,7 @@ class ItemPolicy
      */
     public function update(User $user, Item $item)
     {
-        return $user->is($item->user);
+        return $user->is($item->user) or $user->isAdmin();
     }
 
     /**
@@ -65,7 +65,7 @@ class ItemPolicy
      */
     public function delete(User $user, Item $item)
     {
-        return $user->is($item->user);
+        return $user->is($item->user) or $user->isAdmin();
     }
 
     /**
@@ -77,7 +77,7 @@ class ItemPolicy
      */
     public function restore(User $user, Item $item)
     {
-        //
+        return $user->isAdmin();
     }
 
     /**
@@ -89,6 +89,6 @@ class ItemPolicy
      */
     public function forceDelete(User $user, Item $item)
     {
-        //
+        return $user->isAdmin();
     }
 }

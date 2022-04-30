@@ -7,6 +7,9 @@
         <h2 > {{ $user->name }} </h2>
     </x-slot>
 
-    <x-items :items="$user->items"/>
-
+    @can('view-trashed')
+        <x-items :items="$user->trashedItems->merge($user->items)"/>
+    @else
+        <x-items :items="$user->items"/>
+    @endcan
 </x-app-layout>

@@ -6,7 +6,9 @@ use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvid
 use Illuminate\Support\Facades\Gate;
 
 use App\Models\Item;
+use App\Models\User;
 use App\Policies\ItemPolicy;
+
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -27,6 +29,8 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('view-trashed', function (User $user) {
+            return $user->isAdmin();
+        });
     }
 }

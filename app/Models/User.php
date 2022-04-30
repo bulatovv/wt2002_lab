@@ -26,8 +26,23 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    protected $attributes = [
+        'is_admin' => False
+    ];
 
-    public function items() {
+    public function isAdmin() 
+    {
+        return $this->attributes['is_admin'];  
+    }
+
+    public function items() 
+    {
         return $this->hasMany(Item::class);
+    }
+    
+    public function trashedItems() 
+    {
+        return $this->hasMany(Item::class)->onlyTrashed();
     }
 }

@@ -18,6 +18,11 @@ class ItemController extends Controller
     {
         return view('index', ['items' => Item::all()]);
     }
+    
+    public function indexTrashed()
+    {
+        return view('index', ['items' => Item::onlyTrashed()->get()]);
+    }
 
     public function create()
     {
@@ -64,15 +69,30 @@ class ItemController extends Controller
         ]);
 
         $item->update($request->all());
-        return redirect()->route('items.index');
+        return redirect()->back();
     }
 
     public function destroy(Item $item)
-    {
-        
-        error_log($item);
+    {        
         $item->delete();
-
-        return redirect()->route('items.index');
+        return redirect()->back();
     }
+
+
+    public function forceDelete($id)
+    {
+        $item = Item::withTrashed()->findOrFail($id);
+        $item->forceDelete();
+
+        return redirect()->back();
+    }
+
+    public function restore($id) 
+    {
+        $item = Item::withTrashed()->findOrFail($id);
+        $item->restore(); 
+        
+        return redirect()->back();
+    }
+
 }

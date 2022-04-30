@@ -29,6 +29,14 @@
                     </x-nav-link>
                 </ul>
             @endcan
+            
+            @can('view-trashed')
+                <ul class="navbar-nav">
+                    <x-nav-link href="{{ route('items.trashed') }}" :active="request()->routeIs('items.trashed')">
+                        Корзина
+                    </x-nav-link>
+                </ul>
+            @endcan
 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ms-auto">
