@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,7 @@ Route::get('/', function () {
 });
 
 Route::resource('items', ItemController::class);
+
+Route::get('/users/{user}', [UserController::class, 'show'])->name('user.show');
 
 require __DIR__.'/auth.php';

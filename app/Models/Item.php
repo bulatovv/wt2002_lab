@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
 
 class Item extends Model
 {
@@ -17,6 +18,13 @@ class Item extends Model
         'description',
         'image'
     ];
+
+    protected static function booted()
+    {
+        static::creating(function ($item) {
+            $item->user_id = Auth::id();
+        });
+    }
 
     public function setNameAttribute($value)
     {
