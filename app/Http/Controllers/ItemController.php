@@ -52,9 +52,7 @@ class ItemController extends Controller
 
     public function show(Item $item)
     {
-        return redirect()
-            ->back()
-            ->with(['show_modal' => $item]);
+        return view('item', ['item' => $item]);
     }
 
     public function edit(Item $item)
