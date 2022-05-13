@@ -18,7 +18,7 @@
                 {{ $header }}
         </header>
 
-        <main class="mx-lg-auto mb-5">
+        <main>
             {{ $slot }}
         </main>
     
