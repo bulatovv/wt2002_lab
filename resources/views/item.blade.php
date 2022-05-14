@@ -12,6 +12,7 @@
     @foreach($item->comments as $comment)
         <div class="card mb-3">
             <div class="card-header">
+                {{-- TODO: fix N+1 problem --}}
                 @if($comment->user->friendTo(Auth::user()))
                     <i class="fa-solid fa-user-group"></i>
                 @endif
