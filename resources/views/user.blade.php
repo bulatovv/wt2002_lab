@@ -7,7 +7,7 @@
         <div class="d-flex gap-3">
             <h2> {{ $user->name }} </h2>
 
-            @auth @if(Auth::user()->isNot($user)) 
+            @can('have-friends') @if(Auth::user()->isNot($user)) 
                 @if ($user->friendTo(Auth::user()))
                     <form action={{ route('friends.destroy', [Auth::user()]) }} method="post">
                         @csrf
@@ -22,7 +22,7 @@
                         <input type="submit" class="btn btn-success" value="Добавить в друзья">
                     </form>
                 @endif
-            @endif @endauth
+            @endcan @endauth
         </div>
     </x-slot>
 

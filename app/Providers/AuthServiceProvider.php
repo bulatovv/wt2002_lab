@@ -32,5 +32,9 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('view-trashed', function (User $user) {
             return $user->isAdmin();
         });
+        
+        Gate::define('have-friends', function (User $user) {
+            return true;
+        });
     }
 }

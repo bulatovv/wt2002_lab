@@ -26,11 +26,14 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/users/{user}', [UserController::class, 'show'])->name('users.show');
 
 Route::post('/users/{user}/friends', [FriendshipController::class, 'store'])
+    ->can('have-friends')
     ->name('friends.store');
 Route::delete('/users/{user}/friends', [FriendshipController::class, 'destroy'])
+    ->can('have-friends')
     ->name('friends.destroy');
 
 Route::get('/feed', [FeedController::class, 'index'])
+    ->can('have-friends')
     ->name('feed.index');
 
 Route::post('/items/{item}/comments', [CommentController::class, 'store'])

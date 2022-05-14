@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Item;
+use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class ItemPolicy
+class CommentPolicy
 {
     use HandlesAuthorization;
 
@@ -18,19 +18,19 @@ class ItemPolicy
      */
     public function viewAny(?User $user)
     {
-        return true;
+        //
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Item  $item
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(?User $user, Item $item)
+    public function view(?User $user, Comment $comment)
     {
-        return true;
+        //
     }
 
     /**
@@ -48,47 +48,47 @@ class ItemPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Item  $item
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Item $item)
+    public function update(User $user, Comment $comment)
     {
-        return $user->is($item->user) or $user->isAdmin();
+        //
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Item  $item
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Item $item)
+    public function delete(User $user, Comment $comment)
     {
-        return $user->is($item->user) or $user->isAdmin();
+        //
     }
 
     /**
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Item  $item
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Item $item)
+    public function restore(User $user, Comment $comment)
     {
-        return $user->isAdmin();
+        //
     }
 
     /**
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Item  $item
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Item $item)
+    public function forceDelete(User $user, Comment $comment)
     {
-        return $user->isAdmin();
+        //
     }
 }

@@ -23,7 +23,7 @@
         </div>
     @endforeach
 
-    @auth
+    @can('create', App\Models\Comment::class)
     <form action={{ route('comments.store', [$item]) }} method="post">
         @csrf
         <div class="form-group mt-5">
@@ -31,6 +31,6 @@
             <textarea class="form-control mb-3" id="commentText" name="text" rows="3"></textarea>
             <button type="submit" class="btn btn-success">Отправить</button>
         </div>
-    @endauth
+    @endcan
 
 </x-app-layout>

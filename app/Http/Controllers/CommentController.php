@@ -38,6 +38,8 @@ class CommentController extends Controller
      */
     public function store(Request $request, Item $item)
     {
+        $this->authorize('create', Comment::class);
+
         $request->validate([
             'text' => 'required|string|min:3|max:255'
         ]);

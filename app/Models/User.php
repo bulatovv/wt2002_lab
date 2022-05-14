@@ -48,9 +48,9 @@ class User extends Authenticatable
         );
     }
 
-    public function friendTo(User $user) 
+    public function friendTo(?User $user) 
     {
-        return $user->friends()->where('friend_id', $this->id)->exists();
+        return $user && $user->friends()->where('friend_id', $this->id)->exists();
     }
 
     public function items() 
