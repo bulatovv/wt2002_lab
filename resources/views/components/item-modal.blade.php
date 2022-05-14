@@ -7,8 +7,9 @@
             </div>
             <div class="modal-body">
                 <p>{{ $item->description }}</p> 
-                <img class="img-fluid mb-1" src="{{ asset('img/uploads/' . $item->image) }}"><br>
-                
+                <a href={{ route('items.show', [$item])}}>
+                    <img class="img-fluid mb-1" src="{{ asset('img/uploads/' . $item->image) }}"><br>
+                </a>
                 {{--
                 <button type="button" class="btn btn-primary" 
                  data-bs-toggle="popover" title="Заголовок" 
