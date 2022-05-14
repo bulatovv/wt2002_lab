@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FriendshipController;
+use App\Http\Controllers\FeedController;
 
 
 Route::resource('items', ItemController::class);
@@ -27,5 +28,8 @@ Route::post('/users/{user}/friends', [FriendshipController::class, 'store'])
     ->name('friends.store');
 Route::delete('/users/{user}/friends', [FriendshipController::class, 'destroy'])
     ->name('friends.destroy');
+
+Route::get('/feed', [FeedController::class, 'index'])
+    ->name('feed.index');
 
 require __DIR__.'/auth.php';
