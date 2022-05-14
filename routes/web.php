@@ -5,6 +5,7 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FriendshipController;
 use App\Http\Controllers\FeedController;
+use App\Http\Controllers\CommentController;
 
 
 Route::resource('items', ItemController::class);
@@ -31,5 +32,8 @@ Route::delete('/users/{user}/friends', [FriendshipController::class, 'destroy'])
 
 Route::get('/feed', [FeedController::class, 'index'])
     ->name('feed.index');
+
+Route::post('/items/{item}/comments', [CommentController::class, 'store'])
+    ->name('comments.store');
 
 require __DIR__.'/auth.php';

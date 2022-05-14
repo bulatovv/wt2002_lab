@@ -52,7 +52,7 @@ class ItemController extends Controller
 
     public function show(Item $item)
     {
-        return view('item', ['item' => $item]);
+        return view('item', ['item' => $item->load('comments.user')]);
     }
 
     public function edit(Item $item)

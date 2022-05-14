@@ -3,6 +3,10 @@
 @import "~bootstrap/scss/bootstrap";
 @import "custom";
 
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+
 $gray: #ebeaeb;
 
 @include media-breakpoint-up(xs) {
