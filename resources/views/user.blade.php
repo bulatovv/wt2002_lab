@@ -13,13 +13,19 @@
                         @csrf
                         @method('DELETE')
                         <input type="hidden" name="user_id" value={{ $user->id }}>
-                        <input type="submit" class="btn btn-danger" value="Удалить из друзей">
+                        <button type="submit" class="btn btn-danger"> 
+                            <i class="fa-solid fa-user-xmark"></i>
+                            Удалить из друзей 
+                        </button>
                     </form>
                 @else
                     <form action={{ route('friends.store', [Auth::user()]) }} method="post">
                         @csrf
                         <input type="hidden" name="user_id" value={{ $user->id }}>
-                        <input type="submit" class="btn btn-success" value="Добавить в друзья">
+                        <button type="submit" class="btn btn-success">
+                            <i class="fa-solid fa-user-plus"></i>
+                            Добавить в друзья 
+                        </button>
                     </form>
                 @endif
             @endcan @endauth
