@@ -15,6 +15,14 @@
                     Главная
                 </x-nav-link>
             </ul>
+           
+            @can('have-friends')
+                <ul class="navbar-nav">
+                    <x-nav-link href="{{ route('feed.index') }}" :active="request()->routeIs('feed.index')">
+                        Лента
+                    </x-nav-link>
+                </ul>
+            @endcan
             
             <ul class="navbar-nav">
                 <x-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
