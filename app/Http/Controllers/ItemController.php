@@ -16,7 +16,7 @@ class ItemController extends Controller
 
     public function index()
     {
-        return view('index', ['items' => Item::all()]);
+        return view('index', ['items' => Item::with('user')->get()]);
     }
     
     public function indexTrashed()
