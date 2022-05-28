@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Gate;
 use App\Models\Item;
 use App\Models\User;
 use App\Policies\ItemPolicy;
-
+use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -28,6 +28,10 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
+
+        if (! $this->app->routesAreCached()) {
+            Passport::routes();
+        }
 
         Gate::define('view-trashed', function (User $user) {
             return $user->isAdmin();
